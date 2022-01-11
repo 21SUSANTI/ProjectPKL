@@ -37,9 +37,12 @@ $date_now = date("Y-m-d");
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Pendahuluan</a></li>
+							<li><a href="#intro" class="active">Beranda</a></li>
 							<li><a href="#first">Keuntungan</a></li>
 							<li><a href="#second">Job Tersedia</a></li>
+							<li><a href="#tiga">Tata Cara dan Persyaratan</a></li>
+							<li><a href="#empat">Pengumuman</a></li>
+							<li><a href="#lima">Dokumentasi</a></li>
 							<li><a href="#cta">Admin</a></li>
 						</ul>
 					</nav>
@@ -81,6 +84,7 @@ $date_now = date("Y-m-d");
 										<h3>Character</h3>
 										<p>Pembentukan karakter siap kerja dengan gaya industri modern</p>
 									</li>
+									
 								</ul>
 							</section>
 

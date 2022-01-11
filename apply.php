@@ -26,10 +26,10 @@ $data = mysqli_fetch_array($getdata);
                         $f = $_POST['email'];
                         $g = $_POST['telepon'];
                         $h = $_POST['motivasi'];
-                        $i = $_POST['linkedin'];
-                        $j = $_POST['portfolio'];
+                        $i = $_POST['foto'];
+                        $j = $_POST['ktp'];
                     
-                        $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,linkedin,portfolio) values('$idjob','$a','$b','$d','$e','$f','$g','$h','$i','$j')");
+                        $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp) values('$idjob','$a','$b','$d','$e','$f','$g','$h','$i','$j')");
                     
                         if($insertdata){
                             header('location:thanks.php');
@@ -125,14 +125,14 @@ $data = mysqli_fetch_array($getdata);
 													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
 												</div>
                                                 <div class="col-6 col-12-xsmall">
-                                                    URL LinkedIn
-													<input type="url" name="linkedin" required>
+                                                    Foto
+													<input type="file" name="foto" required>
 												</div>
 												<div class="col-6 col-12-xsmall">
-                                                    URL Portfolio
-													<input type="url" name="portfolio" required>
+                                                    KTP
+													<input type="file" name="ktp" required>
                                                 </div>
-                                                <div class="col-12">
+                                                <div class="col-12"> 
 													<ul class="actions">
 														<li><input type="submit" value="Submit" class="primary" name="apply" /></li>
 														<li><a href="index.php" class="button">Kembali</a></li>

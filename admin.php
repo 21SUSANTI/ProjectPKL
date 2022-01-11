@@ -58,6 +58,7 @@ include 'backend/update.php';
                                         <th>Register</th>
                                         <th>Posisi</th>
                                         <th>Nama</th>
+                                        <th>Detail</th>
                                         <th>Aksi</th>
                                     </tr>
                                     </thead>
@@ -78,8 +79,8 @@ include 'backend/update.php';
                                         $alamat = $reg['alamat'];
                                         $telepon = $reg['telepon'];
                                         $motivational = $reg['motivational'];
-                                        $linkedin = $reg['linkedin'];
-                                        $portfolio = $reg['portfolio'];
+                                        $foto = $reg['foto'];
+                                        $ktp = $reg['ktp'];
 
                                         $bday = new DateTime($dob); 
                                         $today = new Datetime(date('m.d.y'));
@@ -91,6 +92,7 @@ include 'backend/update.php';
                                         <td><?=$posisi;?></td>
                                         <td><?=$nama;?></td>
                                         <td><button type="button" class="button primary small" data-toggle="modal" data-target="#view<?=$id;?>">Tampilkan</button></td>
+                                        <td><button type="button" class="button primary small" data-toggle="modal" data-target="#view<?=$id;?>">Ubah Status</button></td>
                                     </tr>
                                     
                                     <!-- The Modal -->
@@ -108,7 +110,7 @@ include 'backend/update.php';
                                             <div class="modal-body">
                                             <h2><?=$nama;?>, <?=$gender[0];?>, <?=$diff->y;?></h2>
                                             <br><p><?=$motivational;?></p>
-                                            <br><a href="<?=$linkedin;?>" class="button primary" target="_blank">LinkedIn</a> &nbsp <a href="<?=$portfolio;?>" class="button primary" target="blank">Portfolio</a>
+                                            <br><a href="<?=$foto;?>" class="button primary" target="_blank">FOTO</a> &nbsp <a href="<?=$ktp;?>" class="button primary" target="blank">ktp</a>
 
                                             <br><br>
                                             <p><?=$alamat;?></p>
