@@ -29,10 +29,10 @@ $date_now = date("Y-m-d");
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
+					<!-- <header id="header" class="alt">
 					<h1>DINAS TENAGA KERJA<br> Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Malang </h1>
 					<p>Program pelatihan kerja ini memberikan kamu kesempatan untuk mengasah keterampilan agar siap bekerja <br> Terdapat 5 bidang keterampilan yang bisa kamu pilih.</p>
-					</header>
+					</header> -->
 
 				<!-- Nav -->
 					<nav id="nav">
@@ -123,7 +123,7 @@ $date_now = date("Y-m-d");
                                                 <td><?=$namajob;?></td>
                                                 <td><?=$periode;?></td>
                                                 <td><?=$deadline;?></td>
-                                                <td><a href="apply.php?id=<?=$idjob;?>" class="btn btn-primary">Apply</a></td>
+                                                <td><a href="apply.php?id=<?=$idjob;?>" class="btn btn-primary">Registrasi</a></td>
                                             </tr>
                                             
                                             <?php
@@ -134,6 +134,46 @@ $date_now = date("Y-m-d");
                                 </table>
                             </div>
 							</section>
+
+
+							<!-- Get Started -->
+							<section id="tiga" class="main special">
+								<header class="major">
+									<h2>Tata Cara dan Persyaratan</h2>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="persyaratan/persyaratan.php">PERSYARATAN</a></li>
+									</ul>
+								</footer>
+							</section>
+
+							<!-- Get Started -->
+							<section id="empat" class="main special">
+								<header class="major">
+									<h2>Pengumuman</h2>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="dokumentasi/dokumentasi.php" class="button primary">DOKUMENTASI</a></li>
+									</ul>
+								</footer>
+							</section>
+
+							<!-- Get Started -->
+							<section id="lima" class="main special">
+								<header class="major">
+									<h2>Dokumentasi</h2>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="login.php" class="button primary">Login</a></li>
+									</ul>
+								</footer>
+							</section>
+
+
+
 
 						<!-- Get Started -->
 							<section id="cta" class="main special">

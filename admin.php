@@ -40,114 +40,129 @@ include 'backend/update.php';
 					<!-- <header id="header" class="alt">
                         <h1>DINAS TENAGA KERJA<br> Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Malang </h1>
 					</header> -->
+                    <nav id="nav">
+						<ul>
+							
+							<li><a href="#pendaftar">Pendaftar</a></li>
+							<li><a href="#job">Job Tersedia</a></li>
+							
+						</ul>
+					</nav>
 
-				<!-- Main -->
 					<div id="main">
 
-						<!-- First Section -->
-							<section id="first" class="main special">
-                            <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
-								<header class="major">
-									<h2>Kelola Pendaftar</h2>
-								</header>
-								
+<!-- First Section -->
+    <section id="pendaftar" class="main special">
+    <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
+        <header class="major">
+            <h2>Kelola Pendaftar</h2>
+        </header>
+        
 
-                                <table id="table2" class="display" width="100%">
-                                    <thead style="background-color:#2b2b2b;color:#fff">
-                                    <tr>
-                                        <th>Register</th>
-                                        <th>Posisi</th>
-                                        <th>Nama</th>
-                                        <th>Detail</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                    </thead>
-                                <tbody>
-                                    <?php
-                                    $getregistrant = mysqli_query($conn,"select * from registrant r, job j where r.idjob=j.id");
+        <table id="table2" class="display" width="100%">
+            <thead style="background-color:#2b2b2b;color:#fff">
+            <tr>
+                <th>Register</th>
+                <th>Posisi</th>
+                <th>Nama</th>
+                <th>Detail</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+        <tbody>
+            <?php
+            $getregistrant = mysqli_query($conn,"select * from registrant r, job j where r.idjob=j.id");
 
-                                    while($reg=mysqli_fetch_array($getregistrant)){
-                                        //main
-                                        $id = $reg['idreg'];
-                                        $date = $reg['date'];
-                                        $posisi = $reg['jobname'];
-                                        $nama = $reg['name'];
-                                        $email = $reg['email'];
-                                        $gender = $reg['gender'];
-                                        $dob = $reg['dob'];
+            while($reg=mysqli_fetch_array($getregistrant)){
+                //main
+                $id = $reg['idreg'];
+                $date = $reg['date'];
+                $posisi = $reg['jobname'];
+                $nama = $reg['name'];
+                $email = $reg['email'];
+                $gender = $reg['gender'];
+                $dob = $reg['dob'];
 
-                                        $alamat = $reg['alamat'];
-                                        $telepon = $reg['telepon'];
-                                        $motivational = $reg['motivational'];
-                                        $foto = $reg['foto'];
-                                        $ktp = $reg['ktp'];
+                $alamat = $reg['alamat'];
+                $telepon = $reg['telepon'];
+                $motivational = $reg['motivational'];
+                $foto = $reg['foto'];
+                $ktp = $reg['ktp'];
+                $status = $reg['status'];
 
-                                        $bday = new DateTime($dob); 
-                                        $today = new Datetime(date('m.d.y'));
-                                        $diff = $today->diff($bday);
+                $bday = new DateTime($dob); 
+                $today = new Datetime(date('m.d.y'));
+                $diff = $today->diff($bday);
 
-                                    ?>
-                                    <tr>
-                                        <td><?=$date;?></td>
-                                        <td><?=$posisi;?></td>
-                                        <td><?=$nama;?></td>
-                                        <td><button type="button" class="button primary small" data-toggle="modal" data-target="#view<?=$id;?>">Tampilkan</button></td>
-                                        <td><button type="button" class="button primary small" data-toggle="modal" data-target="#view<?=$id;?>">Ubah Status</button></td>
-                                    </tr>
-                                    
-                                    <!-- The Modal -->
-                                    <div class="modal fade" id="view<?=$id;?>">
-                                    <form method="post">
-                                        <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                        
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                            <h4 class="modal-title"><?=$posisi;?></h4>
-                                            </div>
-                                            
-                                            <!-- Modal body -->
-                                            <div class="modal-body">
-                                            <h2><?=$nama;?>, <?=$gender[0];?>, <?=$diff->y;?></h2>
-                                            <br><p><?=$motivational;?></p>
-                                            <br><a href="<?=$foto;?>" class="button primary" target="_blank">FOTO</a> &nbsp <a href="<?=$ktp;?>" class="button primary" target="blank">ktp</a>
+            ?>
+            <tr>
+                <td><?=$date;?></td>
+                <td><?=$posisi;?></td>
+                <td><?=$nama;?></td>
+                
+                <td><button type="button" class="button primary small" data-toggle="modal" data-target="#view<?=$id;?>">Tampilkan</button></td>
+                <td><?=$status;?>
+                <div class="col-6 col-12-xsmall">
+                            <select name="status"><option value="Lulus" placeholder="Belum diCEK">Lulus</option><option value="Tidak Lulus" placeholder="Belum diCEK">Tidak Lulus</option></select>
+                        </div></td>
+            </tr>
+            
+            <!-- The Modal -->
+            <div class="modal fade" id="view<?=$id;?>">
+            <form method="post">
+                <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title"><?=$posisi;?></h4>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                    <h2><?=$nama;?>, <?=$gender[0];?>, <?=$diff->y;?></h2>
+                    <br><p><?=$motivational;?></p>
+                    <br><a href="<?=$foto;?>" class="button primary" target="_blank">FOTO</a> &nbsp <a href="<?=$ktp;?>" class="button primary" target="blank">ktp</a>
 
-                                            <br><br>
-                                            <p><?=$alamat;?></p>
-                                            <a href="mailto:<?=$email;?>" class="btn btn-success">Send Email</a> <a target="_blank" href="https://wa.me/<?=$telepon;?>" class="btn btn-success">Send Whatsapp</a>
-                                            </div>
+                    <br><br>
+                    <p><?=$alamat;?></p>
+                    <a href="mailto:<?=$email;?>" class="btn btn-success">Send Email</a> <a target="_blank" href="https://wa.me/<?=$telepon;?>" class="btn btn-success">Send Whatsapp</a>
+                    </div>
 
-                                            <input type="hidden" name="idpendaftar" value="<?=$id;?>">
-                                            
-                                            <!-- Modal footer -->
-                                            <div class="modal-footer">
-                                            <button type="submit" name="delete" class="btn btn-danger" style="background-color:red"><font color="white">Delete</font></button>
-                                            </div>
-                                            
-                                        </div>
-                                        </div>
-                                    </form>
-                                    </div>
+                    <input type="hidden" name="idpendaftar" value="<?=$id;?>">
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="submit" name="delete" class="btn btn-danger" style="background-color:red"><font color="white">Delete</font></button>
+                    </div>
+                    
+                </div>
+                </div>
+            </form>
+            </div>
 
-                                    <?php
-                                    };
+            <?php
+            };
 
-                                    if(isset($_POST['delete'])){
-                                        $lihatid = $_POST['idpendaftar'];
-                                        $hapus = mysqli_query($conn,"delete from registrant where idreg='$lihatid'");
-                                        if($hapus){
-                                            echo 'Berhasil <meta http-equiv="refresh" content="1;url=admin.php" />';
-                                        } else {
-                                            echo 'Gagal menghapus <meta http-equiv="refresh" content="1;url=admin.php" />';
-                                        };
-                                    }
+            if(isset($_POST['delete'])){
+                $lihatid = $_POST['idpendaftar'];
+                $hapus = mysqli_query($conn,"delete from registrant where idreg='$lihatid'");
+                if($hapus){
+                    echo 'Berhasil <meta http-equiv="refresh" content="1;url=admin.php" />';
+                } else {
+                    echo 'Gagal menghapus <meta http-equiv="refresh" content="1;url=admin.php" />';
+                };
+            }
 
-                                    ?>
-                                </tbody>
-                                </table>
-                            </section>
+            ?>
+        </tbody>
+        </table>
+    </section>
+							
+
+				<!-- JOB -->
                             
-                            <section class="main special">
+                            <section id="job" class="main special">
                             <header class="major">
 									<h2>Kelola Job</h2>
 							</header>
