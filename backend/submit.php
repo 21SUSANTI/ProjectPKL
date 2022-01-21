@@ -9,10 +9,10 @@ if(isset($_POST['apply'])){
     $f = $_POST['email'];
     $g = $_POST['telepon'];
     $h = $_POST['motivasi'];
-    $i = $_POST['linkedin'];
-    $j = $_POST['portfolio'];
+    $i = $_POST['foto'];
+    $j = $_POST['ktp'];
 
-    $insertdata = mysqli_query($conn,"insert into registrant (name,gender,kotalahir,dob,alamat,email,telepon,motivational,linkedin,portfolio) values('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j')");
+    $insertdata = mysqli_query($conn,"insert into registrant (name,gender,kotalahir,dob,alamat,email,telepon,motivational,foto,ktp,status) values('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j', 'belum dicek')");
 
     if($insertdata){
         header('location:thanks.php');
