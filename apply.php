@@ -16,20 +16,32 @@ $data = mysqli_fetch_array($getdata);
                     $deadline = date_format(date_create($data['registerend']),"d M Y");
                     $jobloc = $data['jobloc'];
                     $workingtype = $data['workingtype'];
-
                     if(isset($_POST['apply'])){
-
-                        $a = $_POST['fullname'];
-                        $b = $_POST['gender'];
-                        $d = $_POST['dob'];
-                        $e = $_POST['alamat'];
-                        $f = $_POST['email'];
-                        $g = $_POST['telepon'];
-                        $h = $_POST['motivasi'];
-                        $i = $_POST['foto'];
-                        $j = $_POST['ktp'];
-                    
-                        $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp) values('$idjob','$a','$b','$d','$e','$f','$g','$h','$i','$j')");
+						$fullname = $_POST['fullname'];
+						$gender = $_POST['gender'];
+						$dob = $_POST['dob'];
+						$alamat = $_POST['alamat'];
+						$email = $_POST['email'];
+						$telepon = $_POST['telepon'];
+						$motivasi = $_POST['motivasi'];
+						$ktp = $_POST['ktp'];
+						extract($_POST);
+						$nama_file   = $_FILES['foto']['name'];
+						if(!empty($nama_file)){
+						   // Baca lokasi file sementar dan nama file dari form (fupload)
+						   $lokasi_file = $_FILES['foto']['tmp_name'];
+						   $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+						   $file_foto = date('ymdhis').".".$tipe_file;					   
+						   // Tentukan folder untuk menyimpan file
+						   $folder = "img/$file_foto";
+						   // Apabila file berhasil di upload
+						   move_uploaded_file($lokasi_file,"$folder");
+						}
+						   else
+							   $file_foto="-";+
+					   
+						   $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
+						   values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$file_foto','$ktp', 'belum dicek')");
                     
                         if($insertdata){
                             header('location:thanks.php');
@@ -94,7 +106,7 @@ $data = mysqli_fetch_array($getdata);
 								</header>
 								
 
-                            <form method="post">
+                            <form method="post" enctype="multipart/form-data">
                             <div class="row gtr-uniform">
 												<div class="col-6 col-12-xsmall">
                                                     Nama
@@ -122,7 +134,7 @@ $data = mysqli_fetch_array($getdata);
                                                 </div>
 												<div class="col-12">
                                                     Motivasi
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+													<textarea name="demo-message" id="demo-message" name="motivasi" placeholder="Enter your message" rows="6"></textarea>
 												</div>
                                                 <div class="col-6 col-12-xsmall">
                                                     Foto
