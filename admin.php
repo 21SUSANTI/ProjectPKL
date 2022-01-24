@@ -33,10 +33,7 @@ include 'backend/updatestatus.php';
     </noscript>
 </head>
 
-
-
 <body class="is-preload">
-
     <!-- Wrapper -->
     <div id="wrapper">
         <nav id="nav">
@@ -45,16 +42,7 @@ include 'backend/updatestatus.php';
                     <li><a href="#job">Job</a></li>
                 </ul>
         </nav>
-
-
-        <!-- Header -->
-        <!-- <header id="header" class="alt">
-                        <h1>DINAS TENAGA KERJA<br> Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Malang </h1>
-					</header> -->
-
-        <!-- Main -->
         <div id="main">
-
             <!-- First Section -->
             <section id="pendaftar" class="main special">
                 <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
@@ -133,7 +121,7 @@ include 'backend/updatestatus.php';
                                             </form>
                                         </div>
                                     </div>
-                             </div>
+                            </div>
                             <!-- The Modal -->
                             <div class="modal fade" id="view<?= $id; ?>">
                                 <form method="post">
@@ -147,11 +135,13 @@ include 'backend/updatestatus.php';
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
+                                            
                                                 <h2><?= $nama; ?>, <?= $gender[0]; ?>, <?= $diff->y; ?></h2>
                                                 <br>
                                                 <p><?= $motivational; ?></p>
-                                                <br><a href="<?= $foto; ?>" class="button primary" target="_blank">FOTO</a> &nbsp <a href="<?= $ktp; ?>" class="button primary" target="blank">KTP</a>
-
+                                                <br>
+                                                <img src="img/<?= $foto; ?>" alt=""> &nbsp 
+                                                <a href="<?= $ktp; ?>" class="button primary" target="blank">KTP</a>
                                                 <br><br>
                                                 <p><?= $alamat; ?></p>
                                                 <a href="mailto:<?= $email; ?>" class="btn btn-success">Send Email</a> <a target="_blank" href="https://wa.me/<?= $telepon; ?>" class="btn btn-success">Send Whatsapp</a>
@@ -303,17 +293,12 @@ include 'backend/updatestatus.php';
                         </tbody>
                     </table>
             </section>
-
-
         </div>
-
         <!-- Footer -->
         <footer id="footer">
             <p class="copyright">DISNAKER PMPTSP 2022</p>
         </footer>
-
     </div>
-
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -322,7 +307,6 @@ include 'backend/updatestatus.php';
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 
 
