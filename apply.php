@@ -31,7 +31,7 @@ $data = mysqli_fetch_array($getdata);
 						   $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
 						   $file_foto = date('ymdhis').".".$tipe_file;					   
 						   // Tentukan folder untuk menyimpan file
-						   $folder = "img/$file_foto";
+						   $folder = "img/foto/$file_foto";
 						   // Apabila file berhasil di upload
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
@@ -49,7 +49,7 @@ $data = mysqli_fetch_array($getdata);
 								  move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-							$file_ktp="-";
+							$file_ktp="-";+
 						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
 						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivational','$file_foto','$file_ktp', 'belum dicek')");
                     
