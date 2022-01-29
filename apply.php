@@ -6,7 +6,6 @@ $date_now = date("Y-m-d", strtotime("-16 years"));
 $getid = $_GET['id'];
 $getdata = mysqli_query($conn,"select * from job where id='$getid'");
 $data = mysqli_fetch_array($getdata);
-
                     $idjob = $data['id'];
                     $namajob = $data['jobname'];
                     $descjob = $data['jobdesc'];
@@ -24,7 +23,6 @@ $data = mysqli_fetch_array($getdata);
 						$email = $_POST['email'];
 						$telepon = $_POST['telepon'];
 						$motivasi = $_POST['motivasi'];
-						$ktp = $_POST['ktp'];
 						extract($_POST);
 						$nama_file   = $_FILES['foto']['name'];
 						if(!empty($nama_file)){
@@ -38,7 +36,7 @@ $data = mysqli_fetch_array($getdata);
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-							$file_foto="-";+
+						$file_foto="-";+
 						$nama_ktp   = $_FILES['ktp']['name'];
 						if(!empty($nama_ktp)){
 							// Baca lokasi file sementar dan nama file dari form (fupload)
