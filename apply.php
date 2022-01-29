@@ -112,7 +112,7 @@ $data = mysqli_fetch_array($getdata);
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Daftar Posisi Ini</h2>
+									<h2>Daftar Pelatihan Kerja</h2>
 								</header>
 								
 
@@ -157,7 +157,7 @@ $data = mysqli_fetch_array($getdata);
                                                 </div>
                                                 <div class="col-12"> 
 													<ul class="actions">
-														<li><input type="submit" value="Submit" class="primary" name="apply" /></li>
+														<li><input type="submit" value="Selesai" class="primary" name="apply" /></li>
 														<li><a href="index.php" class="button">Kembali</a></li>
 													</ul>
                                                 </div>
