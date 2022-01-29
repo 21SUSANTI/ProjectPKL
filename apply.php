@@ -22,7 +22,7 @@ $data = mysqli_fetch_array($getdata);
 						$alamat = $_POST['alamat'];
 						$email = $_POST['email'];
 						$telepon = $_POST['telepon'];
-						$motivasi = $_POST['motivasi'];
+						$motivational = $_POST['motivational'];
 						extract($_POST);
 						$nama_file   = $_FILES['foto']['name'];
 						if(!empty($nama_file)){
@@ -36,7 +36,7 @@ $data = mysqli_fetch_array($getdata);
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-						$file_foto="-";+
+						$file_foto="-";
 						$nama_ktp   = $_FILES['ktp']['name'];
 						if(!empty($nama_ktp)){
 							// Baca lokasi file sementar dan nama file dari form (fupload)
@@ -51,7 +51,7 @@ $data = mysqli_fetch_array($getdata);
 						else
 							$file_ktp="-";+
 						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
-						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$file_foto','$file_ktp', 'belum dicek')");
+						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivational','$file_foto','$file_ktp', 'belum dicek')");
                     
                         if($insertdata){
                             header('location:thanks.php');
@@ -144,7 +144,8 @@ $data = mysqli_fetch_array($getdata);
                                                 </div>
 												<div class="col-12">
                                                     Motivasi
-													<textarea name="demo-message" id="demo-message" name="motivasi" placeholder="Enter your message" rows="6"></textarea>
+													<input type="text" name="motivational" placeholder="Motivasi dan Pengalaman Kerja" />
+													<!-- <textarea name="demo-message" id="demo-message" name="motivational" placeholder="Enter your message" rows="6"></textarea> -->
 												</div>
                                                 <div class="col-6 col-12-xsmall">
                                                     Foto

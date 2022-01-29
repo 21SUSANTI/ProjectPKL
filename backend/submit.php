@@ -5,7 +5,7 @@ $dob = $_POST['dob'];
 $alamat = $_POST['alamat'];
 $email = $_POST['email'];
 $telepon = $_POST['telepon'];
-$motivasi = $_POST['motivasi'];
+$motivational = $_POST['motivational'];
 $ktp = $_POST['ktp'];
 if(isset($_POST['apply'])){
     extract($_POST);
@@ -25,7 +25,7 @@ if(isset($_POST['apply'])){
         $file_foto="-";+
 
     $insertdata = mysqli_query($conn,"insert into registrant (name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
-    values('$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$ktp','$file_foto','$status', 'belum dicek')");
+    values('$fullname','$gender','$dob','$alamat','$email','$telepon','$motivational','$ktp','$file_foto','$status', 'belum dicek')");
 
     if($insertdata){
         header('location:thanks.php');
