@@ -112,6 +112,19 @@ $date_now = date("Y-m-d");
                             </div>
 							</section>
 
+							<!-- Tiga Section -->
+							<section id="tiga" class="main special">
+								<header class="major">
+									<h2>Tata Cara dan Persyaratan</h2>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="persyaratan.php" class="button primary">Download</a></li>
+										<!-- <a href="downloadPersyaratan.php?file=<?php echo $rows['TCpersyaratan'] ?>">Download</a><br> -->
+									</ul>
+								</footer>
+							</section>
+
 						<!-- Get Started -->
 							<section id="cta" class="main special">
 								<header class="major">

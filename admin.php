@@ -40,6 +40,7 @@ include 'backend/updatestatus.php';
                 <ul>
                     <li><a href="#pendaftar">Pendaftar</a></li>
                     <li><a href="#job">Job</a></li>
+                    <li><a href="#persyaratan">persyaratan</a></li
                 </ul>
         </nav>
         <div id="main">
@@ -293,6 +294,14 @@ include 'backend/updatestatus.php';
                         </tbody>
                     </table>
             </section>
+            <!-- 3 Section -->
+            <section id="persyaratan" class="main special">
+                <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
+                <header class="major">
+                    <h2>Kelola Tata Cara Pendaftaran dan Persyaratan</h2>
+                    <a href="persyaratan.php" class="btn btn-danger">Tata Cara Pendaftaran dan Persyaratan</a></div>
+                </header>
+                        </section>
         </div>
         <!-- Footer -->
         <footer id="footer">
