@@ -6,7 +6,6 @@ $date_now = date("Y-m-d", strtotime("-16 years"));
 $getid = $_GET['id'];
 $getdata = mysqli_query($conn,"select * from job where id='$getid'");
 $data = mysqli_fetch_array($getdata);
-
                     $idjob = $data['id'];
                     $namajob = $data['jobname'];
                     $descjob = $data['jobdesc'];
@@ -16,20 +15,43 @@ $data = mysqli_fetch_array($getdata);
                     $deadline = date_format(date_create($data['registerend']),"d M Y");
                     $jobloc = $data['jobloc'];
                     $workingtype = $data['workingtype'];
-
                     if(isset($_POST['apply'])){
-
-                        $a = $_POST['fullname'];
-                        $b = $_POST['gender'];
-                        $d = $_POST['dob'];
-                        $e = $_POST['alamat'];
-                        $f = $_POST['email'];
-                        $g = $_POST['telepon'];
-                        $h = $_POST['motivasi'];
-                        $i = $_POST['foto'];
-                        $j = $_POST['ktp'];
-                    
-                        $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp) values('$idjob','$a','$b','$d','$e','$f','$g','$h','$i','$j')");
+						$fullname = $_POST['fullname'];
+						$gender = $_POST['gender'];
+						$dob = $_POST['dob'];
+						$alamat = $_POST['alamat'];
+						$email = $_POST['email'];
+						$telepon = $_POST['telepon'];
+						$motivational = $_POST['motivational'];
+						extract($_POST);
+						$nama_file   = $_FILES['foto']['name'];
+						if(!empty($nama_file)){
+						   // Baca lokasi file sementar dan nama file dari form (fupload)
+						   $lokasi_file = $_FILES['foto']['tmp_name'];
+						   $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+						   $file_foto = date('ymdhis').".".$tipe_file;					   
+						   // Tentukan folder untuk menyimpan file
+						   $folder = "img/foto/$file_foto";
+						   // Apabila file berhasil di upload
+						   move_uploaded_file($lokasi_file,"$folder");
+						}
+						else
+						$file_foto="-";
+						$nama_ktp   = $_FILES['ktp']['name'];
+						if(!empty($nama_ktp)){
+							// Baca lokasi file sementar dan nama file dari form (fupload)
+							$lokasi_file = $_FILES['ktp']['tmp_name'];
+							$tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+							$file_ktp = date('ymdhis').".".$tipe_file;					   
+							// Tentukan folder untuk menyimpan file
+							$folder = "img/ktp/$file_ktp";
+							// Apabila file berhasil di upload
+								  move_uploaded_file($lokasi_file,"$folder");
+						}
+						else
+							$file_ktp="-";+
+						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
+						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivational','$file_foto','$file_ktp', 'belum dicek')");
                     
                         if($insertdata){
                             header('location:thanks.php');
@@ -94,7 +116,7 @@ $data = mysqli_fetch_array($getdata);
 								</header>
 								
 
-                            <form method="post">
+                            <form method="post" enctype="multipart/form-data">
                             <div class="row gtr-uniform">
 												<div class="col-6 col-12-xsmall">
                                                     Nama
@@ -122,7 +144,8 @@ $data = mysqli_fetch_array($getdata);
                                                 </div>
 												<div class="col-12">
                                                     Motivasi
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+													<input type="text" name="motivational" placeholder="Motivasi dan Pengalaman Kerja" />
+													<!-- <textarea name="demo-message" id="demo-message" name="motivational" placeholder="Enter your message" rows="6"></textarea> -->
 												</div>
                                                 <div class="col-6 col-12-xsmall">
                                                     Foto

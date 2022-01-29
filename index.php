@@ -38,8 +38,7 @@ $date_now = date("Y-m-d");
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">Beranda</a></li>
-							<li><a href="#first">Keuntungan</a></li>
-							<li><a href="#second">Job Tersedia</a></li>
+							<li><a href="#second">Pelatihan</a></li>
 							<li><a href="#tiga">Tata Cara dan Persyaratan</a></li>
 							<li><a href="#empat">Pengumuman</a></li>
 							<li><a href="#lima">Dokumentasi</a></li>
@@ -64,34 +63,12 @@ $date_now = date("Y-m-d");
 							</section>
 
 						<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Keuntungan</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Knowledge</h3>
-										<p>Pelatihan oleh mentor yang ahli di bidangnya</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Experience</h3>
-										<p>Menambah jam terbang dan pendalaman materi</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-gem"></span>
-										<h3>Character</h3>
-										<p>Pembentukan karakter siap kerja dengan gaya industri modern</p>
-									</li>
-									
-								</ul>
-							</section>
+							
 
 						<!-- Second Section -->
 							<section id="second" class="main special">
 								<header class="major">
-									<h2><strong>Job Tersedia</strong></h2>
+									<h2><strong>DAFTAR PELATIHAN</strong></h2>
                                 </header>
                                 <div class="table-wrapper">
 								<table class="alt">
