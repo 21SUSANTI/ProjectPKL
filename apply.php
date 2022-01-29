@@ -37,11 +37,23 @@ $data = mysqli_fetch_array($getdata);
 						   // Apabila file berhasil di upload
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
-						   else
-							   $file_foto="-";+
-					   
-						   $insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
-						   values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$file_foto','$ktp', 'belum dicek')");
+						else
+							$file_foto="-";+
+						$nama_ktp   = $_FILES['ktp']['name'];
+						if(!empty($nama_ktp)){
+							// Baca lokasi file sementar dan nama file dari form (fupload)
+							$lokasi_file = $_FILES['ktp']['tmp_name'];
+							$tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+							$file_ktp = date('ymdhis').".".$tipe_file;					   
+							// Tentukan folder untuk menyimpan file
+							$folder = "img/ktp/$file_ktp";
+							// Apabila file berhasil di upload
+								  move_uploaded_file($lokasi_file,"$folder");
+						}
+						else
+							$file_ktp="-";+
+						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
+						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$file_foto','$file_ktp', 'belum dicek')");
                     
                         if($insertdata){
                             header('location:thanks.php');

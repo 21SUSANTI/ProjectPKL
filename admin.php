@@ -141,7 +141,7 @@ include 'backend/updatestatus.php';
                                                 <p><?= $motivational; ?></p>
                                                 <br>
                                                 <img src="img/<?= $foto; ?>" alt=""> &nbsp 
-                                                <a href="<?= $ktp; ?>" class="button primary" target="blank">KTP</a>
+                                                <img src="img/ktp/<?= $ktp; ?>" alt="">
                                                 <br><br>
                                                 <p><?= $alamat; ?></p>
                                                 <a href="mailto:<?= $email; ?>" class="btn btn-success">Send Email</a> <a target="_blank" href="https://wa.me/<?= $telepon; ?>" class="btn btn-success">Send Whatsapp</a>
