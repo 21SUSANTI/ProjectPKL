@@ -140,7 +140,7 @@ include 'backend/updatestatus.php';
                                                 <br>
                                                 <p><?= $motivational; ?></p>
                                                 <br>
-                                                <img src="img/<?= $foto; ?>" alt=""> &nbsp 
+                                                <img src="img/foto/<?= $foto; ?>" alt=""> &nbsp 
                                                 <img src="img/ktp/<?= $ktp; ?>" alt="">
                                                 <br><br>
                                                 <p><?= $alamat; ?></p>

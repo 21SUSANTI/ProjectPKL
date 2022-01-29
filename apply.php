@@ -31,7 +31,7 @@ $data = mysqli_fetch_array($getdata);
 						   $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
 						   $file_foto = date('ymdhis').".".$tipe_file;					   
 						   // Tentukan folder untuk menyimpan file
-						   $folder = "img/$file_foto";
+						   $folder = "img/foto/$file_foto";
 						   // Apabila file berhasil di upload
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
