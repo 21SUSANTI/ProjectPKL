@@ -112,22 +112,14 @@ $date_now = date("Y-m-d");
                             </div>
 							</section>
 
-<<<<<<< HEAD
-							<!-- Tiga Section -->
-=======
 
 							<!-- Get Started -->
->>>>>>> 234895cc254a6e99a04f9b55ffd47953b5b51a10
 							<section id="tiga" class="main special">
 								<header class="major">
 									<h2>Tata Cara dan Persyaratan</h2>
 								</header>
 								<footer class="major">
 									<ul class="actions special">
-<<<<<<< HEAD
-										<li><a href="persyaratan.php" class="button primary">Download</a></li>
-										<!-- <a href="downloadPersyaratan.php?file=<?php echo $rows['TCpersyaratan'] ?>">Download</a><br> -->
-=======
 										<li><a href="persyaratan/persyaratan.php">PERSYARATAN</a></li>
 									</ul>
 								</footer>
@@ -153,17 +145,13 @@ $date_now = date("Y-m-d");
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="login.php" class="button primary">Login</a></li>
->>>>>>> 234895cc254a6e99a04f9b55ffd47953b5b51a10
 									</ul>
 								</footer>
 							</section>
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 234895cc254a6e99a04f9b55ffd47953b5b51a10
 						<!-- Get Started -->
 							<section id="cta" class="main special">
 								<header class="major">

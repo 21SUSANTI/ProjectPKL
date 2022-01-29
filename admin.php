@@ -11,7 +11,7 @@ include 'backend/updatestatus.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Online Pelatihan Kerja</title>
+    <title>Pendaftaran Online Pelatihan Kerja DISNAKER</title>
 
     <!-- Start datatable css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -141,7 +141,7 @@ include 'backend/updatestatus.php';
                                                 <br>
                                                 <p><?= $motivational; ?></p>
                                                 <br>
-                                                <img src="img/<?= $foto; ?>" alt=""> &nbsp 
+                                                <img src="img/foto/<?= $foto; ?>" alt=""> &nbsp 
                                                 <img src="img/ktp/<?= $ktp; ?>" alt="">
                                                 <br><br>
                                                 <p><?= $alamat; ?></p>

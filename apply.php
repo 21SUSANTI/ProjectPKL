@@ -31,7 +31,7 @@ $data = mysqli_fetch_array($getdata);
 						   $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
 						   $file_foto = date('ymdhis').".".$tipe_file;					   
 						   // Tentukan folder untuk menyimpan file
-						   $folder = "img/$file_foto";
+						   $folder = "img/foto/$file_foto";
 						   // Apabila file berhasil di upload
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
@@ -112,7 +112,7 @@ $data = mysqli_fetch_array($getdata);
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Daftar Posisi Ini</h2>
+									<h2>Daftar Pelatihan Kerja</h2>
 								</header>
 								
 
@@ -157,7 +157,7 @@ $data = mysqli_fetch_array($getdata);
                                                 </div>
                                                 <div class="col-12"> 
 													<ul class="actions">
-														<li><input type="submit" value="Submit" class="primary" name="apply" /></li>
+														<li><input type="submit" value="Selesai" class="primary" name="apply" /></li>
 														<li><a href="index.php" class="button">Kembali</a></li>
 													</ul>
                                                 </div>
