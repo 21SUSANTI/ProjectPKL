@@ -36,7 +36,7 @@ $data = mysqli_fetch_array($getdata);
 						   move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-						$file_foto="-";+
+						$file_foto="-";
 						$nama_ktp   = $_FILES['ktp']['name'];
 						if(!empty($nama_ktp)){
 							// Baca lokasi file sementar dan nama file dari form (fupload)
@@ -49,7 +49,7 @@ $data = mysqli_fetch_array($getdata);
 								  move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-							$file_ktp="-";+
+							$file_ktp="-";
 						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
 						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivasi','$file_foto','$file_ktp', 'belum dicek')");
                     
