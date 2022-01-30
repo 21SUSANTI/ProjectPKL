@@ -51,7 +51,7 @@ include 'backend/tambahPengumuman.php';
             <section id="pendaftar" class="main special">
                 <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
                 <header class="major">
-                    <h2>Kelola Pendaftar</h2>
+                    <h2><strong>Kelola Pendaftar</strong></h2>
                 </header>
                 <table id="table2" class="display" width="100%">
                     <thead style="background-color:#2b2b2b;color:#fff">
@@ -189,7 +189,7 @@ include 'backend/tambahPengumuman.php';
 
             <section id="job" class="main special">
                 <header class="major">
-                    <h2>Kelola Job</h2>
+                    <h2><strong>Kelola Job</strong></h2>
                 </header>
                 <br>
                 <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#myModal">Tambah Job Baru</button></div>
@@ -342,7 +342,7 @@ include 'backend/tambahPengumuman.php';
             <!-- 3 Section -->
             <section id="persyaratan" class="main special">
                 <header class="major">
-                    <h2>Kelola Tata Cara dan Persyaratan Pendaftaran</h2>
+                    <h2><strong>Kelola Tata Cara dan Persyaratan Pendaftaran</strong></h2>
                 </header>
                 <br>
                 <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#uploadSyarat">Upload Persyaratan</button></div>
@@ -416,7 +416,7 @@ include 'backend/tambahPengumuman.php';
             </section>
             <section id="pengumuman" class="main special">
                 <header class="major">
-                    <h2>Kelola Pengumuman</h2>
+                    <h2><strong>Kelola Pengumuman</strong></h2>
                 </header>
                 <br>
                 <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#uploadPengumuman">Upload Pengumuman</button></div>
