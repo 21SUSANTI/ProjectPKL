@@ -4,6 +4,7 @@ require 'backend/koneksi.php';
 include 'backend/tambahjob.php';
 include 'backend/update.php';
 include 'backend/updatestatus.php';
+include 'backend/tambahSyarat.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -291,17 +292,126 @@ include 'backend/updatestatus.php';
                             };
 
                             ?>
+                            <div class="modal fade" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="background-color:#2b2b2b;">
+                                    <form method="post">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Tambah Job Baru</h4>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <input type="text" name="jobname" placeholder="Nama Posisi" class="form-control"><br>
+
+                                            <textarea name="desc" placeholder="Job Description"></textarea><br>
+
+                                            Start Date: <input type="date" name="start" class="form-control"><br>
+
+                                            End Date: <input type="date" name="end" class="form-control"><br>
+
+                                            End Registration: <input type="date" name="endregist" class="form-control"><br>
+
+                                            <input type="text" placeholder="Job Location" name="jobloc" class="form-control"><br>
+
+                                            <select name="workingtype">
+                                                <option selected values="WFH">WFH</option>
+                                                <option value="WFO">WFO</option>
+                                                <option value="Mix">MIX WFH-WFO / Rolling</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="addjob">Submit</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                         </tbody>
                     </table>
             </section>
             <!-- 3 Section -->
             <section id="persyaratan" class="main special">
-                <div align="right"><a href="logout.php" class="btn btn-danger">Logout</a></div>
                 <header class="major">
-                    <h2>Kelola Tata Cara Pendaftaran dan Persyaratan</h2>
-                    <a href="persyaratan.php" class="btn btn-danger">Tata Cara Pendaftaran dan Persyaratan</a></div>
+                    <h2>Kelola Tata Cara dan Persyaratan Pendaftaran</h2>
                 </header>
-                        </section>
+                <br>
+                <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#uploadSyarat">Upload Persyaratan</button></div>
+                <br>
+                <div class="data-tables datatable-dark">
+                    <table id="table1" class="display" width="100%">
+                        <thead style="background-color:#2b2b2b;color:#fff">
+                            <tr>
+                                <th>Tata Cara</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $getdata = mysqli_query($conn, "select * from persyaratan");
+                            while ($data = mysqli_fetch_array($getdata)) {
+                                $idPersyaratan = $data['idPersyaratan'];
+                                $tataCara = $data['tataCara'];
+                            ?>
+
+                                <tr>
+                                    <form method="post">
+                                        <input type="hidden" name="idPersyaratan" value="<?= $idPersyaratan; ?>">
+                                        <td><?= $tataCara; ?></td>
+                                        <td>
+                                        <button type="submit" class="button small" style="background-color:red;" name="deletesyarat">
+                                                <font color="white">Delete</font></button>
+                                        </td>
+                                    </form>
+                                </tr>
+                            <?php
+                            };
+
+                            if (isset($_POST['deletesyarat'])) {
+                                $idPersyaratan = $_POST['idPersyaratan'];
+                                $querydelete = mysqli_query($conn, "delete from persyaratan where idPersyaratan='$idPersyaratan'");
+                                if ($querydelete) {
+                                    echo 'Berhasil
+                            <meta http-equiv="refresh" content="1;url=admin.php" />';
+                                } else {
+                                    echo 'Gagal
+                            <meta http-equiv="refresh" content="3;url=submit.php" />';
+                                };
+                            };
+
+                            ?>
+                        </tbody>
+                    </table>
+                <div class="modal fade" id="uploadSyarat">
+                    <div class="modal-dialog">
+                    <div class="modal-content" style="background-color:#2b2b2b;">
+                        <form method="post" enctype="multipart/form-data">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Tambah File Persyaratan</h4>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="col-6 col-12-xsmall">
+								<input type="file" name="tataCara" required>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" name="addSyarat">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+            </div>
+            </section>
         </div>
         <!-- Footer -->
         <footer id="footer">
@@ -320,47 +430,6 @@ include 'backend/updatestatus.php';
 
 
 <!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content" style="background-color:#2b2b2b;">
-            <form method="post">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Tambah Job Baru</h4>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <input type="text" name="jobname" placeholder="Nama Posisi" class="form-control"><br>
-
-                    <textarea name="desc" placeholder="Job Description"></textarea><br>
-
-                    Start Date: <input type="date" name="start" class="form-control"><br>
-
-                    End Date: <input type="date" name="end" class="form-control"><br>
-
-                    End Registration: <input type="date" name="endregist" class="form-control"><br>
-
-                    <input type="text" placeholder="Job Location" name="jobloc" class="form-control"><br>
-
-                    <select name="workingtype">
-                        <option selected values="WFH">WFH</option>
-                        <option value="WFO">WFO</option>
-                        <option value="Mix">MIX WFH-WFO / Rolling</option>
-                    </select>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" name="addjob">Submit</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
 
 
 

@@ -119,8 +119,18 @@ $date_now = date("Y-m-d");
 								</header>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="persyaratan.php" class="button primary">Download</a></li>
+										<!-- <li><a href="persyaratan.php" class="button primary">Download</a></li> -->
 										<!-- <a href="downloadPersyaratan.php?file=<?php echo $rows['TCpersyaratan'] ?>">Download</a><br> -->
+										<?php
+										$query2 = "SELECT * FROM persyaratan ";
+										$run2 = mysqli_query($conn,$query2);
+										
+										while($rows = mysqli_fetch_assoc($run2)){
+											?>
+										<a href="downloadPersyaratan.php?file=<?php echo $rows['tataCara'] ?>">Download</a><br>
+										<?php
+										}
+										?>
 									</ul>
 								</footer>
 							</section>
