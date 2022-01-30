@@ -86,10 +86,10 @@ $data = mysqli_fetch_array($getdata);
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
+					<!-- <header id="header" class="alt">
 					<h1>DINAS TENAGA KERJA<br> Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Malang </h1>
 						<p>Program pelatihan kerja ini memberikan kamu kesempatan untuk mengasah keterampilan agar siap bekerja <br> Terdapat 5 bidang keterampilan yang bisa kamu pilih.</p>
-					</header>
+					</header> -->
 
 				<!-- Main -->
 					<div id="main">

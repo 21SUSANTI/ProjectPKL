@@ -148,7 +148,7 @@ include 'backend/tambahPengumuman.php';
                                                 <img src="img/ktp/<?= $ktp; ?>" alt="">
                                                 <br><br>
                                                 <p><?= $alamat; ?></p>
-                                                <a href="mailto:<?= $email; ?>" class="btn btn-success">Send Email</a> <a target="_blank" href="https://wa.me/<?= $telepon; ?>" class="btn btn-success">Send Whatsapp</a>
+                                                <a target="_blank" href="https://wa.me/<?= $telepon; ?>" class="btn btn-success">Send Whatsapp</a>
                                             </div>
 
                                             <input type="hidden" name="idpendaftar" value="<?= $id; ?>">
@@ -349,7 +349,7 @@ include 'backend/tambahPengumuman.php';
                 <br>
                 <div class="data-tables datatable-dark">
                     <table id="table1" class="display" width="100%">
-                        <thead style="background-color:#2b2b2b;color:#fff">
+                        <thead style="background-color:#2b2b2b; color:#fff">
                             <tr>
                                 <th>Tata Cara</th>
                                 <th>Aksi</th>
@@ -393,7 +393,7 @@ include 'backend/tambahPengumuman.php';
                     </table>
                 <div class="modal fade" id="uploadSyarat">
                     <div class="modal-dialog">
-                    <div class="modal-content" style="background-color:#2b2b2b;">
+                    <div class="modal-content" style="background-color:#e8dada;">
                         <form method="post" enctype="multipart/form-data">
                             <!-- Modal Header -->
                             <div class="modal-header">
@@ -407,7 +407,7 @@ include 'backend/tambahPengumuman.php';
                             <!-- Modal footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="addSyarat">Submit</button>
+                                <button type="submit" class="btn btn-success" name="addSyarat">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -452,7 +452,7 @@ include 'backend/tambahPengumuman.php';
 
                             if (isset($_POST['deletepengumuman'])) {
                                 $idPengumuman = $_POST['idPengumuman'];
-                                $querydelete = mysqli_query($conn, "delete from pengumuman where idPengumuman='$idPengumuman");
+                                $querydelete = mysqli_query($conn, "delete from pengumuman where idPengumuman='$idPengumuman'");
                                 if ($querydelete) {
                                     echo 'Berhasil
                             <meta http-equiv="refresh" content="1;url=admin.php" />';
@@ -467,7 +467,7 @@ include 'backend/tambahPengumuman.php';
                     </table>
                 <div class="modal fade" id="uploadPengumuman">
                     <div class="modal-dialog">
-                    <div class="modal-content" style="background-color:#2b2b2b;">
+                    <div class="modal-content" style="background-color:#e8dada;">
                         <form method="post" enctype="multipart/form-data">
                             <!-- Modal Header -->
                             <div class="modal-header">

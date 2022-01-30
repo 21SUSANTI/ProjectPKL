@@ -25,7 +25,7 @@
         <br>
         
         <h2 style="color:black">Terima Kasih Atas Partisipasi Kamu</h2>
-        <p>Informasi selanjutnya akan dikirim melalui email</p>
+        <p>Informasi selanjutnya akan dikirim melalui Whatsapp</p>
         <p>Anda akan dibawa kembali ke halaman utama dalam 5 detik</p>
         <br>
 
@@ -33,7 +33,7 @@
 
     </div>
 
-    <footer>CHAFIDHOTURROCHIMAH_NELI ALVIONITA_SUSANTI </footer>
+    <footer>DISNAKER PMPTSP</footer>
     
 </body>
 </html>

@@ -125,7 +125,7 @@ $date_now = date("Y-m-d");
 										
 										while($rows = mysqli_fetch_assoc($run2)){
 											?>
-										<a href="downloadPersyaratan.php?file=<?php echo $rows['tataCara'] ?>">Download</a><br>
+										<a class="btn btn-success" href="downloadPersyaratan.php?file=<?php echo $rows['tataCara'] ?>">DOWNLOAD</a><br>
 										<?php
 										}
 										?>
@@ -144,7 +144,7 @@ $date_now = date("Y-m-d");
 										
 										while($rows = mysqli_fetch_assoc($run2)){
 											?>
-										<a href="downloadPengumuman.php?file=<?php echo $rows['filePengumuman'] ?>">Download</a><br>
+										<a class="btn btn-success" href="downloadPengumuman.php?file=<?php echo $rows['filePengumuman'] ?>">DOWNLOAD</a><br>
 										<?php
 										}
 										?>
@@ -168,7 +168,7 @@ $date_now = date("Y-m-d");
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">DISNAKER PMPTSP 2022</p>
+						<p class="copyright">DISNAKER PMPTSP</p>
 					</footer>
 
 			</div>
