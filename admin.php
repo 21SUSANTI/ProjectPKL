@@ -5,6 +5,7 @@ include 'backend/tambahjob.php';
 include 'backend/update.php';
 include 'backend/updatestatus.php';
 include 'backend/tambahSyarat.php';
+include 'backend/tambahPengumuman.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,8 @@ include 'backend/tambahSyarat.php';
                 <ul>
                     <li><a href="#pendaftar">Pendaftar</a></li>
                     <li><a href="#job">Job</a></li>
-                    <li><a href="#persyaratan">persyaratan</a></li
+                    <li><a href="#persyaratan">Persyaratan</a></li>
+                    <li><a href="#pengumuman">Pengumuman</a></li>
                 </ul>
         </nav>
         <div id="main">
@@ -406,6 +408,80 @@ include 'backend/tambahSyarat.php';
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary" name="addSyarat">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+            </div>
+            </section>
+            <section id="pengumuman" class="main special">
+                <header class="major">
+                    <h2>Kelola Pengumuman</h2>
+                </header>
+                <br>
+                <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#uploadPengumuman">Upload Pengumuman</button></div>
+                <br>
+                <div class="data-tables datatable-dark">
+                    <table id="table1" class="display" width="100%">
+                        <thead style="background-color:#2b2b2b;color:#fff">
+                            <tr>
+                                <th>File Pengumuman</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $getdata = mysqli_query($conn, "select * from pengumuman");
+                            while ($data = mysqli_fetch_array($getdata)) {
+                                $idPengumuman = $data['idPengumuman'];
+                                $filePengumuman = $data['filePengumuman'];
+                            ?>
+
+                                <tr>
+                                    <form method="post">
+                                        <input type="hidden" name="idPengumuman" value="<?= $idPengumuman; ?>">
+                                        <td><?= $filePengumuman; ?></td>
+                                        <td>
+                                        <button type="submit" class="button small" style="background-color:red;" name="deletepengumuman">
+                                                <font color="white">Delete</font></button>
+                                        </td>
+                                    </form>
+                                </tr>
+                            <?php
+                            };
+
+                            if (isset($_POST['deletepengumuman'])) {
+                                $idPengumuman = $_POST['idPengumuman'];
+                                $querydelete = mysqli_query($conn, "delete from pengumuman where idPengumuman='$idPengumuman");
+                                if ($querydelete) {
+                                    echo 'Berhasil
+                            <meta http-equiv="refresh" content="1;url=admin.php" />';
+                                } else {
+                                    echo 'Gagal
+                            <meta http-equiv="refresh" content="3;url=submit.php" />';
+                                };
+                            };
+
+                            ?>
+                        </tbody>
+                    </table>
+                <div class="modal fade" id="uploadPengumuman">
+                    <div class="modal-dialog">
+                    <div class="modal-content" style="background-color:#2b2b2b;">
+                        <form method="post" enctype="multipart/form-data">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Tambah File Pengumuman</h4>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="col-6 col-12-xsmall">
+								<input type="file" name="filePengumuman" required>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" name="addPengumuman">Submit</button>
                             </div>
                         </form>
                     </div>

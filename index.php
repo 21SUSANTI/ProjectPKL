@@ -115,12 +115,10 @@ $date_now = date("Y-m-d");
 							<!-- Tiga Section -->
 							<section id="tiga" class="main special">
 								<header class="major">
-									<h2>Tata Cara dan Persyaratan</h2>
+									<h2><strong>TATA CARA DAN PERSYARATAN</strong></h2>
 								</header>
 								<footer class="major">
 									<ul class="actions special">
-										<!-- <li><a href="persyaratan.php" class="button primary">Download</a></li> -->
-										<!-- <a href="downloadPersyaratan.php?file=<?php echo $rows['TCpersyaratan'] ?>">Download</a><br> -->
 										<?php
 										$query2 = "SELECT * FROM persyaratan ";
 										$run2 = mysqli_query($conn,$query2);
@@ -134,11 +132,30 @@ $date_now = date("Y-m-d");
 									</ul>
 								</footer>
 							</section>
+							<section id="empat" class="main special">
+								<header class="major">
+									<h2><strong>PENGUMUMAN</strong></h2>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<?php
+										$query2 = "SELECT * FROM pengumuman ";
+										$run2 = mysqli_query($conn,$query2);
+										
+										while($rows = mysqli_fetch_assoc($run2)){
+											?>
+										<a href="downloadPengumuman.php?file=<?php echo $rows['filePengumuman'] ?>">Download</a><br>
+										<?php
+										}
+										?>
+									</ul>
+								</footer>
+							</section>
 
 						<!-- Get Started -->
 							<section id="cta" class="main special">
 								<header class="major">
-									<h2>Kelola Web Sebagai Admin</h2>
+									<h2><strong>KELOLA WEB SEBAGAI ADMIN</strong></h2>
 								</header>
 								<footer class="major">
 									<ul class="actions special">
