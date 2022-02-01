@@ -1,6 +1,8 @@
 <?php
 include 'backend/cek.php';
 require 'backend/koneksi.php';
+
+$pelatihan = $_POST['pelatihan1'];
 ?>
 <link rel="stylesheet" type="text/css" href="../style.css">
 <h3>DATA PENDAFTAR PELATIHAN DAN PRODUKTIVITAS KERJA</h3></div>
@@ -13,10 +15,11 @@ require 'backend/koneksi.php';
             <th>Nama</th>
             <th>Status</th>
 		</tr>
+		<?php
 		
-		<?php		
+		if(isset($_POST['cetak_pdf'])){		
 		$nomor=1;
-		$query="SELECT * FROM registrant left join job on registrant.idjob = job.id ORDER BY idjob DESC";
+		$query="SELECT * FROM registrant left join job on registrant.idjob = job.id where idjob = ".$pelatihan." ORDER BY idjob DESC";
 		$q_tampil_pendaftar = mysqli_query($conn, $query);
 		if(mysqli_num_rows($q_tampil_pendaftar)>0)
 		{
@@ -30,7 +33,8 @@ require 'backend/koneksi.php';
 			<td><?php echo $r_tampil_pendaftar['status']; ?></td>		
 		</tr>		
 		<?php $nomor++; } 
-		}?>		
+		}
+	};?>		
 	</table>
 	<script>
 		window.print();

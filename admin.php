@@ -73,7 +73,7 @@ include 'backend/tambahPengumuman.php';
                             $date = $reg['date'];
                             $posisi = $reg['jobname'];
                             $nama = $reg['name'];
-                            $email = $reg['email'];
+                            $nik = $reg['nik'];
                             $gender = $reg['gender'];
                             $dob = $reg['dob'];
 
@@ -183,7 +183,22 @@ include 'backend/tambahPengumuman.php';
                     </tbody>
                 </table>
                 <br>
-                <div align="right"><a class="btn btn-danger" href="cetakpendaftar.php">Cetak PDF</a></div>
+                <form method="POST" name="form1" action="cetakpendaftar.php">
+                    <div class="modal-body">
+                    <select name="pelatihan1" class="isian-formulir isian-formulir-border">
+                        <?php
+                        $sql_pelatihan = mysqli_query($conn, "SELECT * FROM job");
+                        while($data_pelatihan = mysqli_fetch_array($sql_pelatihan)){
+                        ?>
+                        <option value="<?=$data_pelatihan['id'];?>">
+                        <?php echo $data_pelatihan['jobname'];?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    </div>
+                    <div align="center"><button type="submit" class="btn btn-danger"  style="background-color:#B22222;" name="cetak_pdf"><font color = "white">Cetak PDF</font></button></div>
+                </form>
                 <br>
             </section>
 
