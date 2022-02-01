@@ -31,6 +31,7 @@ require 'backend/koneksi.php';
 		</tr>		
 		<?php $nomor++; } 
 		}?>		
+
 	</table>
 	<script>
 		window.print();

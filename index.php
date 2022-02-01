@@ -56,7 +56,7 @@ $date_now = date("Y-m-d");
 										<header class="major">
 											<h2>PELATIHAN KERJA</h2>
 										</header>
-										<p>Pelatihan kerja yang dilaksanakan oleh DISNAKER PMPTSP bertujuan untuk memberikan kesempatan kepada calon pekerja untuk melatih keterampilannya. Terdapat 5 kategori keterampilan yang bisa dipilih sesuai dengan minat dan bakat. Jangan sampai ketinggalan!</p>
+										<p>Pelatihan kerja yang dilaksanakan oleh Dinas Ketenagakerjaan, Penanaman Modal dan Pelayanan Terpadu Satu Pintu atau biasa disebut DISNAKER PMPTSP. DISNAKER PMPTSP bertujuan untuk memberikan kesempatan kepada calon pekerja untuk melatih keterampilannya. Terdapat 5 kategori keterampilan yang bisa dipilih sesuai dengan minat dan bakat. Jangan sampai ketinggalan!</p>
 									</div>
 									<img src="img/landing.jpg" class="landing" />
 								</div>
