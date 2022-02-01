@@ -42,7 +42,6 @@ $date_now = date("Y-m-d");
 							<li><a href="#tiga">Tata Cara dan Persyaratan</a></li>
 							<li><a href="#empat">Pengumuman</a></li>
 							<li><a href="#lima">Dokumentasi</a></li>
-							<li><a href="#cta">Admin</a></li>
 						</ul>
 					</nav>
 
@@ -151,19 +150,6 @@ $date_now = date("Y-m-d");
 									</ul>
 								</footer>
 							</section>
-
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2><strong>KELOLA WEB SEBAGAI ADMIN</strong></h2>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="login.php" class="button primary">Login</a></li>
-									</ul>
-								</footer>
-							</section>
-
 					</div>
 
 				<!-- Footer -->
