@@ -13,7 +13,7 @@ $pelatihan = $_POST['pelatihan1'];
             <th>Register</th>
             <th>Posisi</th>
             <th>Nama</th>
-            <th>Status</th>
+            <th>Status Penerimaan</th>
 		</tr>
 		<?php
 		
