@@ -6,6 +6,8 @@ include 'backend/update.php';
 include 'backend/updatestatus.php';
 include 'backend/tambahSyarat.php';
 include 'backend/tambahPengumuman.php';
+include 'backend/updateAdmin.php';
+include 'backend/tambahAdmin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +43,10 @@ include 'backend/tambahPengumuman.php';
         <nav id="nav">
                 <ul>
                     <li><a href="#pendaftar">Pendaftar</a></li>
-                    <li><a href="#job">Job</a></li>
+                    <li><a href="#job">Pelatihan</a></li>
                     <li><a href="#persyaratan">Persyaratan</a></li>
                     <li><a href="#pengumuman">Pengumuman</a></li>
+                    <li><a href="#tambahAdmin">Tambah Admin</a></li>
                 </ul>
         </nav>
         <div id="main">
@@ -311,7 +314,7 @@ include 'backend/tambahPengumuman.php';
                             ?>
                             <div class="modal fade" id="myModal">
                             <div class="modal-dialog">
-                                <div class="modal-content" style="background-color:#2b2b2b;">
+                            <div class="modal-content" style="background-color:#e8dada;">
                                     <form method="post">
 
                                         <!-- Modal Header -->
@@ -503,7 +506,147 @@ include 'backend/tambahPengumuman.php';
                  </div>
             </div>
             </section>
-        </div>
+        <section id="tambahAdmin" class="main special">
+                <header class="major">
+                    <h2><strong>Kelola Admin</strong></h2>
+                </header>
+                <br>
+                <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#my">Tambah Admin Baru</button></div>
+                <br>
+                <div class="data-tables datatable-dark">
+                    <table id="table1" class="display" width="100%">
+                        <thead style="background-color:#2b2b2b;color:#fff">
+                            <tr>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $getdata = mysqli_query($conn, "select * from admin");
+                            while ($data = mysqli_fetch_array($getdata)) {
+                                $idAdmin = $data['id'];
+                                $username = $data['username'];
+                                $password = $data['password'];                   
+                            ?>
+
+                                <tr>
+                                    <form method="post">
+                                        <input type="hidden" name="idA" value="<?= $idAdmin; ?>">
+                                        <td><?= $username; ?></td>
+                                        <td><?= $password; ?></td>
+                                        <td>
+                                        <a class="button primary small" data-toggle="modal" data-target="#editadmin<?= $idAdmin; ?>">Edit</a>
+                                        <button type="submit" class="button small" style="background-color:red;" name="deleteAdmin">
+                                        <font color="white">Delete</font></button>
+                                        </td>
+                                    </form>
+                                </tr>
+
+
+                                <!-- The Modal -->
+                                <div class="modal fade" id="edit<?= $idAdmin; ?>">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form method="post">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Edit <?= $username; ?></h4>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <input type="text" name="updateusername" class="form-control" value="<?= $username; ?>"><br>
+                                                    <input type="text" name="updatepassword" class="form-control" value="<?= $password; ?>"><br>             
+                                                    <input type="hidden" name="updateid" value="<?= $idAdmin; ?>">
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary" name="updateAdmin">Update</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="editadmin<?= $idAdmin; ?>">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form method="post">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Edits <?= $username; ?></h4>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <input type="text" name="updateusername" class="form-control" value="<?= $username; ?>"><br>
+                                                    <input type="text" name="updatepassword" class="form-control" value="<?= $password; ?>"><br>             
+                                                    <input type="hidden" name="updateid" value="<?= $idAdmin; ?>">
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary" name="updateAdmin">Update</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php
+                            };
+
+                            if (isset($_POST['deleteAdmin'])) {
+                                $idA = $_POST['idA'];
+                                $querydelete = mysqli_query($conn, "delete from admin where id='$idA'");
+
+                                if ($querydelete) {
+                                    echo 'Berhasil
+                            <meta http-equiv="refresh" content="1;url=admin.php" />';
+                                } else {
+                                    echo 'Gagal
+                            <meta http-equiv="refresh" content="3;url=submit.php" />';
+                                };
+                            };
+
+                            ?>
+                            <div class="modal fade" id="my">
+                            <div class="modal-dialog">
+                            <div class="modal-content" style="background-color:#e8dada;">
+                                    <form method="post">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Admin baru</h4>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <input type="text" name="username" placeholder="Nama" class="form-control"><br>
+                                            <input type="text" name="password" placeholder="Password" class="form-control"><br>
+
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="addAdmin">Submit</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        </tbody>
+                    </table>
+            </section>
+            </div>
         <!-- Footer -->
         <footer id="footer">
             <p class="copyright">DISNAKER PMPTSP 2022</p>
