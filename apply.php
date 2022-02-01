@@ -20,7 +20,7 @@ $data = mysqli_fetch_array($getdata);
 						$gender = $_POST['gender'];
 						$dob = $_POST['dob'];
 						$alamat = $_POST['alamat'];
-						$email = $_POST['email'];
+						$nik = $_POST['nik'];
 						$telepon = $_POST['telepon'];
 						$motivational = $_POST['motivational'];
 						extract($_POST);
@@ -49,16 +49,23 @@ $data = mysqli_fetch_array($getdata);
 								  move_uploaded_file($lokasi_file,"$folder");
 						}
 						else
-							$file_ktp="-";+
-						$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,email,telepon,motivational,foto,ktp,status) 
-						values('$idjob','$fullname','$gender','$dob','$alamat','$email','$telepon','$motivational','$file_foto','$file_ktp', 'belum dicek')");
-                    
-                        if($insertdata){
-                            header('location:thanks.php');
-                        } else {
-                            echo 'Gagal
+							$file_ktp="-";
+						$getdatanik = mysqli_query($conn, "select * from registrant where nik = '.$nik.' && where idjob == '.$getid'");
+						if($getdatanik == NULL){
+							$insertdata = mysqli_query($conn,"insert into registrant (idjob,name,gender,dob,alamat,nik,telepon,motivational,foto,ktp,status) 
+							values('$idjob','$fullname','$gender','$dob','$alamat','$nik','$telepon','$motivational','$file_foto','$file_ktp', 'belum dicek')");
+							
+							if($insertdata){
+								header('location:thanks.php');
+							} else {
+								echo 'Gagal
+								<meta http-equiv="refresh" content="3;url=submit.php" />';
+							}
+						}
+						else {
+							echo 'Gagal
                             <meta http-equiv="refresh" content="3;url=submit.php" />';
-                        }
+						}
                     };
 
 ?>
@@ -123,8 +130,8 @@ $data = mysqli_fetch_array($getdata);
 													<input type="text" name="fullname" placeholder="Name" />
 												</div>
 												<div class="col-6 col-12-xsmall">
-                                                    Email
-													<input type="email" name="email" placeholder="Email" />
+                                                    NIK
+													<input type="text" name="nik" placeholder="NIK" />
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     Tanggal Lahir
