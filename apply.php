@@ -119,7 +119,7 @@ $data = mysqli_fetch_array($getdata);
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Daftar Pelatihan Kerja</h2>
+									<h2>Formulir Pelatihan Kerja</h2>
 								</header>
 								
 

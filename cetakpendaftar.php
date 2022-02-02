@@ -12,8 +12,11 @@ $pelatihan = $_POST['pelatihan1'];
 			<th id="label-tampil-no">No</th>
             <th>Register</th>
             <th>Posisi</th>
+			<th>NIK</th>
             <th>Nama</th>
-            <th>Status Penerimaan</th>
+			<th>Jenis Kelamin</th>
+			<th>Alamat</th>
+         	<th>Status Penerimaan</th>
 		</tr>
 		<?php
 		
@@ -29,7 +32,10 @@ $pelatihan = $_POST['pelatihan1'];
 			<td><?php echo $nomor; ?></td>
 			<td><?php echo $r_tampil_pendaftar['idreg']; ?></td>
 			<td><?php echo $r_tampil_pendaftar['jobname']; ?></td>
+			<td><?php echo $r_tampil_pendaftar['nik']; ?></td>
 			<td><?php echo $r_tampil_pendaftar['name']; ?></td>
+			<td><?php echo $r_tampil_pendaftar['gender']; ?></td>
+			<td><?php echo $r_tampil_pendaftar['alamat']; ?></td>
 			<td><?php echo $r_tampil_pendaftar['status']; ?></td>		
 		</tr>		
 		<?php $nomor++; } 
