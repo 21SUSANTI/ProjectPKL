@@ -63,7 +63,6 @@ $date_now = date("Y-m-d");
 
 						<!-- First Section -->
 							
-
 						<!-- Second Section -->
 							<section id="second" class="main special">
 								<header class="major">
@@ -131,6 +130,7 @@ $date_now = date("Y-m-d");
 									</ul>
 								</footer>
 							</section>
+							<!-- Empat -->
 							<section id="empat" class="main special">
 								<header class="major">
 									<h2><strong>PENGUMUMAN</strong></h2>
@@ -150,12 +150,64 @@ $date_now = date("Y-m-d");
 									</ul>
 								</footer>
 							</section>
+							<!-- Lima -->
+							<section id="lima" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>DOKUMENTASI</b></h2>
+										</header>
+										
+									</div>
+									<img src="img/landing.jpg" class="landing" />
+								</div>
+							</section>
 					</div>
-
+				<br><br>
 				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">DISNAKER PMPTSP</p>
+					<footer id="footer text-center text-white">
+						<!-- Section: Social media -->
+						<section class="mb-4 align-center">
+						<!-- Facebook -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-facebook-f"></i
+						></a>
+
+						<!-- Twitter -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-twitter"></i
+						></a>
+
+						<!-- Google -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-google"></i
+						></a>
+
+						<!-- Instagram -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-instagram"></i
+						></a>
+
+						<!-- Linkedin -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-linkedin-in"></i
+						></a>
+
+						<!-- Github -->
+						<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+							><i class="fab fa-github"></i
+						></a>
+						</section>
+						<!-- Section: Social media -->
+					
+
+					<!-- Copyright -->
+					<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+						© 2022 Copyright: DISNAKER-PMPTSP
+					</div>
+					<!-- Copyright -->
 					</footer>
+					<!-- Footer -->
 
 			</div>
 
