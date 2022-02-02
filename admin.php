@@ -150,6 +150,7 @@ include 'backend/tambahAdmin.php';
                                                 <img src="img/foto/<?= $foto; ?>" alt=""> &nbsp 
                                                 <img src="img/ktp/<?= $ktp; ?>" alt="">
                                                 <br><br>
+                                                <p><?= $nik; ?></p>
                                                 <p><?= $alamat; ?></p>
                                                 <a target="_blank" href="https://wa.me/<?= $telepon; ?>" class="btn btn-success">Send Whatsapp</a>
                                             </div>
