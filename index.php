@@ -41,7 +41,7 @@ $date_now = date("Y-m-d");
 							<li><a href="#second">Pelatihan</a></li>
 							<li><a href="#tiga">Tata Cara dan Persyaratan</a></li>
 							<li><a href="#empat">Pengumuman</a></li>
-							<li><a href="#lima">Dokumentasi</a></li>
+							<!-- <li><a href="#lima">Dokumentasi</a></li> -->
 						</ul>
 					</nav>
 
@@ -55,9 +55,9 @@ $date_now = date("Y-m-d");
 										<header class="major">
 											<h2>PELATIHAN KERJA</h2>
 										</header>
-										<p>Pelatihan kerja yang dilaksanakan oleh Dinas Ketenagakerjaan, Penanaman Modal dan Pelayanan Terpadu Satu Pintu atau biasa disebut DISNAKER PMPTSP. DISNAKER PMPTSP bertujuan untuk memberikan kesempatan kepada calon pekerja untuk melatih keterampilannya. Terdapat 5 kategori keterampilan yang bisa dipilih sesuai dengan minat dan bakat. Jangan sampai ketinggalan!</p>
+										<p align=left>Pelatihan kerja yang dilaksanakan oleh Dinas Ketenagakerjaan, Penanaman Modal dan Pelayanan Terpadu Satu Pintu atau biasa disebut DISNAKER PMPTSP. Pelatihan ini bertujuan untuk memberikan kesempatan kepada calon pekerja untuk melatih keterampilannya. Terdapat banyak kategori keterampilan yang bisa dipilih sesuai dengan minat dan bakat.</p> <p>Ayo ikutan dan jangan sampai ketinggalan!</p>
 									</div>
-									<img src="img/landing.jpg" class="landing" />
+									<img src="img/pelatihan.jpg" class="landing" />
 								</div>
 							</section>
 
@@ -151,7 +151,7 @@ $date_now = date("Y-m-d");
 								</footer>
 							</section>
 							<!-- Lima -->
-							<section id="lima" class="main">
+							<!-- <section id="lima" class="main">
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
@@ -161,7 +161,7 @@ $date_now = date("Y-m-d");
 									</div>
 									<img src="img/landing.jpg" class="landing" />
 								</div>
-							</section>
+							</section> -->
 					</div>
 				<br><br>
 				<!-- Footer -->

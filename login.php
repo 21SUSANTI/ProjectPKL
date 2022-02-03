@@ -60,7 +60,6 @@ if(isset($_POST['login'])){
 							<section id="first" class="main special">
 								<header class="major">
                                     <h2>Masuk sebagai admin</h2>
-                                    <p>Username&Password: admin&admin</p>
 								</header>
 								
 
