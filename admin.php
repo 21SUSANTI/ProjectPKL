@@ -208,10 +208,10 @@ include 'backend/tambahAdmin.php';
 
             <section id="job" class="main special">
                 <header class="major">
-                    <h2><strong>Kelola Job</strong></h2>
+                    <h2><strong>Kelola Jenis Pelatihan</strong></h2>
                 </header>
                 <br>
-                <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#myModal">Tambah Job Baru</button></div>
+                <div align="right"><button type="button" class="primary" data-toggle="modal" data-target="#myModal">Tambah Pelatihan Baru</button></div>
                 <br>
                 <div class="data-tables datatable-dark">
                     <table id="table1" class="display" width="100%">
