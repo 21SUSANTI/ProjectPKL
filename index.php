@@ -57,7 +57,7 @@ $date_now = date("Y-m-d");
 										</header>
 										<p align=left>Pelatihan kerja yang dilaksanakan oleh Dinas Ketenagakerjaan, Penanaman Modal dan Pelayanan Terpadu Satu Pintu atau biasa disebut DISNAKER PMPTSP. Pelatihan ini bertujuan untuk memberikan kesempatan kepada calon pekerja untuk melatih keterampilannya. Terdapat banyak kategori keterampilan yang bisa dipilih sesuai dengan minat dan bakat.</p> <p>Ayo ikutan dan jangan sampai ketinggalan!</p>
 									</div>
-									<img src="img/pelatihan.jpg" class="landing" />
+									<img src="img/pelatihan.jpeg" class="landing" />
 								</div>
 							</section>
 

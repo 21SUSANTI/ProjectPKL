@@ -112,7 +112,7 @@ $data = mysqli_fetch_array($getdata);
                                         <p>Location: <?=$jobloc;?></p>
                                         <p><?=$descjob;?></p>
 									</div>
-									<img src="img/pelatihan.jpg" class="landing" />
+									<img src="img/pelatihan.jpeg" class="landing" />
 								</div>
 							</section>
 
